@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter_draw_whiteboard/shape_page.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -23,42 +24,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: AnimatedSplashScreen(
+          splash: Image.asset(
+            'asset/images/drawinglogo.png',
+          ),
+          splashTransition: SplashTransition.sizeTransition,
+          nextScreen: DemoApp()),
       theme: ThemeData.dark(),
-    );
-  }
-}
-
-class SplashScreen extends StatefulWidget {
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  var _height, _width;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Timer(
-        Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => DemoApp())));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    _height = MediaQuery.of(context).size.height;
-    _width = MediaQuery.of(context).size.width;
-    return Container(
-      height: _height,
-      width: _width,
-      color: Colors.white,
-      child: Image.asset(
-        'asset/images/drawinglogo.png',
-        height: 150,
-        width: 200,
-      ),
     );
   }
 }
@@ -441,6 +413,11 @@ Kinnari Dabgar''',
               backgroundColor: Colors.amber,
               child: Icon(Icons.stacked_line_chart),
               label: "Line",
+              labelBackgroundColor: Colors.black,
+              labelStyle: GoogleFonts.mcLaren(
+                  //fontStyle: FontStyle.italic,
+                  fontSize: 15,
+                  color: Colors.white),
               onTap: () {
                 Navigator.push(
                     context,
@@ -451,6 +428,11 @@ Kinnari Dabgar''',
               backgroundColor: Colors.amber,
               child: Icon(Icons.crop_landscape),
               label: "Rectangle",
+              labelBackgroundColor: Colors.black,
+              labelStyle: GoogleFonts.mcLaren(
+                  //fontStyle: FontStyle.italic,
+                  fontSize: 15,
+                  color: Colors.white),
               onTap: () {
                 Navigator.push(
                     context,
@@ -462,6 +444,11 @@ Kinnari Dabgar''',
               backgroundColor: Colors.amber,
               child: Icon(Icons.crop_square),
               label: "Square",
+              labelBackgroundColor: Colors.black,
+              labelStyle: GoogleFonts.mcLaren(
+                  //fontStyle: FontStyle.italic,
+                  fontSize: 15,
+                  color: Colors.white),
               onTap: () {
                 Navigator.push(
                     context,
@@ -473,6 +460,11 @@ Kinnari Dabgar''',
               backgroundColor: Colors.amber,
               child: Icon(Icons.circle_outlined),
               label: "Circle",
+              labelBackgroundColor: Colors.black,
+              labelStyle: GoogleFonts.mcLaren(
+                  //fontStyle: FontStyle.italic,
+                  fontSize: 15,
+                  color: Colors.white),
               onTap: () {
                 Navigator.push(
                     context,
@@ -483,6 +475,11 @@ Kinnari Dabgar''',
               backgroundColor: Colors.amber,
               child: Icon(Icons.architecture_outlined),
               label: "Arc",
+              labelBackgroundColor: Colors.black,
+              labelStyle: GoogleFonts.mcLaren(
+                  //fontStyle: FontStyle.italic,
+                  fontSize: 15,
+                  color: Colors.white),
               onTap: () {
                 Navigator.push(
                     context,
@@ -493,6 +490,11 @@ Kinnari Dabgar''',
               backgroundColor: Colors.amber,
               child: Icon(Icons.warning),
               label: "Triangle",
+              labelBackgroundColor: Colors.black,
+              labelStyle: GoogleFonts.mcLaren(
+                  //fontStyle: FontStyle.italic,
+                  fontSize: 15,
+                  color: Colors.white),
               onTap: () {
                 Navigator.push(
                     context,
